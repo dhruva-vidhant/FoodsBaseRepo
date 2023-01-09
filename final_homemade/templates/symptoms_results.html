@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FoodsBase</title>
+        <link rel="shortcut icon" href="/static/css/FoodsBaseDarkTransparent.png" type="image/x-icon">
+        <!--<link rel="stylesheet" href="home_style.css">-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/exercisedata_styles.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="script.js" > </script>
+    </head>
+    <body>
+        <h1>The results came back for your options:</h1>
+        <h2>{{ list }}</h2>
+        <h1>You may have:</h1>
+        <h2>{{ data }}</h2>
+        <h2>Here are some types of foods you should eat to have better health:</h2>
+
+        <label for="bone">Bone Health Foods</label>
+        <label for="bonedesc">To improve bone health, eat foods with: Calcium, Vitamin D, Magnesium, Vitamin K, and Boron.</label>
+
+        <label for="brain">Brain Health Foods</label>
+        <label for="braindesc">To improve brain health, eat foods with: Foods high in choline (soybeans, peanuts, eggs), Omega 3 fatty acids, Vitamin E, rich B-vitamins, Zinc, and are antoxidant-rich.</label>
+
+        <label for="inflammation">Inflammation Health Foods</label>
+        <label for="inflammationdesc">To improve brain health, eat foods with: Omega-3 fatty acids and foods and specific nutrients shown to inhibit COX2.</label>
+
+        
+        <label for="heart">Heart Health Foods</label>
+        <label for="hearthelp">To improve brain health, eat foods with: Beneficial fats such as oils from fish or olive oil, nuts and seeds, rich B-vitamins, a variety of fruits and vegetables, soy, and dark chocolate.</label>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/09640c1ffc.js" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodsBase</title>
+    <link rel="shortcut icon" href="/static/css/FoodsBaseDarkTransparent.png" type="image/x-icon">
+    <!--<link rel="stylesheet" href="/templates/style.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="buyers_styles.css">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/buyers_styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js" > </script>
+   
+</head>
+<Body>
+  <header id="header">
+    <div class="logo">
+      <img height="50px" width="50px" src="https://git.lorx.space/static/css/FoodsBaseDarkTransparent.png" alt="Logo">
+    </div>
+    <div class="icon">
+      <a href="sellers.html"><i class="fa-solid fa-hand-holding-hand"></i></a>
+    </div>
+  </header>
+
+    <Div Class="Wrapper">
+        <h3 Id="Search-Location">Delivering to {{ data }}</h3>
+      <Div Id="Search-Container">
+        <input type="text" placeholder="Search for an item." id='key'>
+        <Button Id="Search" onclick="search()">Search </Button>
+      </Div>
+      
+      <Div Id="Buttons">
+        <Button Class="Button-Value" Onclick="FilterProduct('All')">All</Button>
+        <Button Class="Button-Value" Onclick="FilterProduct('OptionA')">
+          OptionA
+        </Button>
+        <Button Class="Button-Value" Onclick="FilterProduct('OptionB')">
+          OptionB
+        </Button>
+        <Button Class="Button-Value" Onclick="FilterProduct('OptionC')">
+          OptionC
+        </Button>
+        <Button Class="Button-Value" Onclick="FilterProduct('OptionD')">
+          OptionD
+        </Button>
+      </Div>
+      <Div Id="Products">
+        <h3 id='name'>Tofu with cats</h3>
+        <p id='description'>Cats are really cute so i made this kindly made tofu with chairs and others in paris while i was eating a baguette.</p>
+    <div id='price_cents'>69.99EUR</div>    
+    <div id='zipcode'>086913</div>
+
+
+
+
+
+
+        
+      </Div>
+    </Div>
+
+  </Body>
+</Html>

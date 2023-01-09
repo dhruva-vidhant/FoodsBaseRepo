@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FoodsBase</title>
+        <link rel="shortcut icon" href="/static/css/FoodsBaseDarkTransparent.png" type="image/x-icon">
+        <!--<link rel="stylesheet" href="home_style.css">-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/exercisedata_styles.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="script.js" > </script>
+</head>
+<body>
+    <div class="blobs" role="presentation">
+        <div class="blob-rotate">
+          <div class="blob-move">
+            <div class="blob"></div>
+          </div>
+        </div>
+        <div class="blob-rotate">
+          <div class="blob-move">
+            <div class="blob"></div>
+          </div>
+        </div>
+        <div class="blob-rotate">
+          <div class="blob-move">
+            <div class="blob"></div>
+          </div>
+        </div>
+      </div>
+    <div class="container">
+        <form action="/exerciseprocess" method="post">
+    
+        <label for="fname" id="desc">Could you briefly explain what exercise you did?</label><br>
+        <input type="text" id="exer_description" name="exer_description" placeholder="Type a small description of your exercise...">
+            <br><br>
+        <label for="gender" id="gend">What gender do you identify with?</label><br>
+        <input type="text" id="gender" name="gender" placeholder="Please type in your gender here...">
+        <br><br>
+        <label for="weight" id="weigh">Weight</label><br>
+        <input type="text" id="weight" name="weight" placeholder="Please type in your weight...">
+        <br><br>
+        <label for="height" id="heigh">Height</label><br>
+        <input type="text" id="height" name="height" placeholder="Please type in your height...">
+        <br><br>
+        <label for="age" id="ag">Age</label><br>
+        <input type="text" id="age" name="age" placeholder="Please type in your age...">
+        <br><br>
+
+    
+
+
+    
+        <input type="submit" id="uwu" value="Submit">
+    
+        </form>
+    </div>
+</body>
+</html>

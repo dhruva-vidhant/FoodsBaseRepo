@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FoodsBase</title>
+        <link rel="shortcut icon" href="https://b.zmtcdn.com/images/logo/zomato_logo_2017.png" type="image/x-icon">
+        <!--<link rel="stylesheet" href="home_style.css">-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/sellers_styles.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="script.js" > </script>
+        
+</head>
+<body>
+    <div class="container">
+        <form action="action_page.php">
+    
+        <label for="fname">Full Name</label>
+        <input type="text" id="seller_name" name="fullname" placeholder="Your name..">
+
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="Your email..">
+
+        <label for="Food Title">Food Title</label>
+        <input type="text" id="food_name" name="foodtitle" placeholder="The name of your food..">
+
+        <label for="Food Description">Food Description</label>
+        <textarea type="text" id="description" name="fooddescription" placeholder="Please write a description of your food..." style="height:200px"></textarea>>
+
+        <label for="Price of food">Food Price</label>
+        <input type="text" id="price_cents" name="foodprice" placeholder="Please format the price like this 'USD $X.xx'">
+
+        
+    
+        <label for="ingredients">Food's Ingredients</label>
+        <textarea id="ingredients" name="ingredients" placeholder="Please type one ingredient per line for seperation..." style="height:200px"></textarea>
+
+        <label for="Zipcode">Your Zipcode</label>
+        <textarea id="zipcode" name="zipcode" placeholder="Please type in your postal code here..." ></textarea>
+
+        <label for="address">Address for pickup</label>
+        <textarea id="address" name="address" placeholder="Please type in your address..." ></textarea>
+
+        <label for="quantity">Quantity available</label>
+        <textarea id="quantity" name="quantity" placeholder="Please specify the amount available here..." ></textarea>
+
+        <label for="keywords">Keywords</label>
+        <textarea id="keywords" name="keywords" placeholder="Please enter one keyword by line..." style="height:200px"></textarea>
+        
+
+
+
+    
+        <input type="submit" value="Submit" onclick="add_item(); window.location.href=congrats.html">
+
+    
+        </form>
+    </div>
+</body>
+</html>

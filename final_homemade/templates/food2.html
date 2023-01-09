@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html> 
+	<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FoodsBase</title>
+        <link rel="shortcut icon" href="https://b.zmtcdn.com/images/logo/zomato_logo_2017.png" type="image/x-icon">
+        <link rel="stylesheet" href="/static/css/foodstyles.css">
+        <script src="http://127.0.0.1:500/templates/script.js"> </script>
+        <script>
+        	function add_item() {
+  var food_name = document.getElementById("food_name").value
+  var description = document.getElementById("description").value
+  var price_cents = document.getElementById("price_cents").value
+  var zipcode = document.getElementById("zipcode").value
+  var quantity = document.getElementById("quantity").value
+  var seller_name = document.getElementById("seller_name").value
+  var email = document.getElementById("email").value
+  var keywords = "{" + document.getElementById("keywords").value.split("\n") + "}"
+  var ingredients = '{' + document.getElementById("ingredients").value.split("\n") +'}'
+  var address = document.getElementById("address").value
+
+  var http = new XMLHttpRequest()
+  http.open("GET", "http://127.0.0.1:5000/"+food_name+"/"+description+"/"+price_cents+"/"+zipcode+"/"+quantity+"/"+seller_name+"/"+email+"/"+keywords+"/"+ingredients+"/"+address, false)
+  http.send(null)
+}
+
+function add_order() {
+var buyers_email = document.getElementById("buyers_email").value
+var comments = document.getElementById("comments").value
+var quantity = document.getElementById("quantity").value
+var http = new XMLHttpRequest()
+
+http.open("GET", "http://127.0.0.1:5000/"+buyers_email+"/"+comments+"/"+quantity, false)
+http.send(null)
+}
+
+function searchByKeyword(keyword) {
+var http = new XMLHttpRequest()
+http.open("GET", "http://127.0.0.1:5000/" + "/keyword/"+ keyword, false)
+http.send(null)
+//console.log(http.responseText)
+return http.responseText
+}
+
+function searchByTitle(title) {
+var http = new XMLHttpRequest()
+http.open("GET","http://127.0.0.1:5000/" + "/title/"+ title, false)
+http.send(null)
+return http.responseText
+}
+
+function search() {
+const key = document.getElementById('key').value
+console.log(key)
+const keyword_matches = eval(searchByKeyword(key))
+const title_matches = eval(searchByTitle(key))
+console.log(keyword_matches)
+document.write(`<Div Id="Search-Container">
+      <input id='key' type="text" placeholder="Search for an item in your area...">
+      <Button Id="Search" onclick="search()">Search</Button>
+    </Div>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/buyers_styles.css') }}">`)
+keyword_matches.forEach(match => {
+  display(match)
+  document.write("<hr class='solid'>")
+});
+title_matches.forEach (match => {
+  display(match)
+  document.write("<hr class='solid'>")
+});
+}
+
+function display(result) {
+let list = eval(result)
+document.write(`<div class="items">`)
+document.write(`<p id='name2'>Name: ${list[1]}</p>`)
+document.write(`<p id='keywords'> Keywords: ${list[8]} </p>`)
+document.write(`<a href = 'food_page/${list[0]}'> See More </a>`)
+document.write(`</div>`)
+}
+
+</script>
+        
+</head>
+	<body>
+		<h1 id='food name'>REPLACE WITH FOOD NAME</h1>
+		<p id='keywords'>REPLACE WITH KEYWORDS</p>
+		<div id='price'>REPLACE WITH PRICE</div>
+		<p id='description'>REPLACE WITH DESC</p>
+		<div class="container">
+			<!--<form action="action_page.php"> -->
+		
+			<label for="email">Email</label>
+			<input type="text" id="buyers_email" name="email" placeholder="Your email..">
+	
+	
+			<label for="Comments">Food Description</label>
+			<textarea type="text" id="comments" name="comments" placeholder="Type in any comments that you want the cook to see..." style="height:200px"></textarea>
+
+	
+
+	
+			<label for="quantity">Quantity available</label>
+			<input id="quantity" name="quantity" placeholder="Please specify the amount available here..." ></input>
+
+			<script>
+				function add_order() {
+  var buyers_email = document.getElementById("buyers_email").value
+  var comments = document.getElementById("comments").value
+  var quantity = document.getElementById("quantity").value
+  var http = new XMLHttpRequest()
+
+  http.open("GET", "http://127.0.0.1:5000/"+buyers_email+"/"+comments+"/"+quantity, false)
+  http.send(null)
+
+}
+		</script>
+	
+		
+			<input type="submit" value="Submit" onclick="add_order()">
+	</body>
+</html>

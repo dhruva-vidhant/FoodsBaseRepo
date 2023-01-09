@@ -1,0 +1,43 @@
+@Import Url(Https://Fonts.Googleapis.Com/Css?Family=Sigmar+One);
+
+Body {
+    Background: #3da1d1;
+    Color: #Fff;
+    Overflow: Hidden;
+}
+
+.Congrats {
+    Position: Absolute;
+    Top: 140px;
+    Width: 550px;
+    Height: 100px;
+    Padding: 20px 10px;
+    Text-Align: Center;
+    Margin: 0 Auto;
+    Left: 0;
+    Right: 0;
+}
+
+H1 {
+    Transform-Origin: 50% 50%;
+    Font-Size: 50px;
+    Font-Family: 'Sigmar One', Cursive;
+    Cursor: Pointer;
+    Z-Index: 2;
+    Position: Absolute;
+    Top: 0;
+    Text-Align: Center;
+    Width: 100%;
+}
+
+.Blob {
+    Height: 50px;
+    Width: 50px;
+    Color: #Ffcc00;
+    Position: Absolute;
+    Top: 45%;
+    Left: 45%;
+    Z-Index: 1;
+    Font-Size: 30px;
+    Display: None;	
+}
